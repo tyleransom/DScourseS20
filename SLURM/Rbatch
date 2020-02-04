@@ -62,7 +62,7 @@ else
         echo "#!/bin/bash"                      >> $shell
 
         # SLURM metacommands
-        echo "#SBATCH --partition=normal"       >> $shell
+        echo "#SBATCH --partition=debug"        >> $shell
         echo "#SBATCH --ntasks=1"               >> $shell
         echo "#SBATCH --mem=1024"               >> $shell
         echo "#SBATCH --job-name=Rbatch"        >> $shell
@@ -72,7 +72,7 @@ else
         echo "#SBATCH --time=$timelen"          >> $shell
         echo "pwd"                              >> $shell
         echo "date"                             >> $shell
-        echo "srun /usr/bin/R CMD BATCH  ${filestem}.${extension}" >> $shell
+        echo "srun R CMD BATCH  ${filestem}.${extension}" >> $shell
         sbatch $shell
     fi
 fi
