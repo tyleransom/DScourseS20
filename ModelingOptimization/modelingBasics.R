@@ -18,7 +18,7 @@ mpg_hat <- 37.22727 - 0.03177*160 - 3.87783*3
 
 ## Causal inference problem
 # what would mpg of car be if I reduced wt by 500 lbs?
-mpg_diff <- -3.87783*.5
+mpg_diff <- -3.87783*(-.5)
 
 # New model: V engine or Straight engine?
 est <- glm(vs ~ hp + wt, data=df, family = "binomial")
