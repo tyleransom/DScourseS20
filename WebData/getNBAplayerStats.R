@@ -10,4 +10,4 @@ stats <- metrics_leaders(seasons=2020, metric = "pts", modes = "PerGame")
 
 final <- left_join(salaries,stats, by=("namePlayer")) %>% drop_na(amountContract,fgm) %>% filter(slugSeason.x=="2019-20")
 
-final %>% distinct(namePlayer) %>% select(namePlayer,slugTeam,amountContract,minutes,ftm,fta,fgm,fga,fg3m,pts,treb,ast,tov,eff) %>% write.csv("playerSalaryStats.csv")
+final %>% distinct(namePlayer, .keep_all=T) %>% select(namePlayer,slugTeam,amountContract,minutes,ftm,fta,fgm,fga,fg3m,pts,treb,ast,tov,eff) %>% write.csv("playerSalaryStats.csv")
