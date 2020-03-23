@@ -29,8 +29,8 @@ Thus, machine learning is a (large) subset of AI
 
 ## Machine learning vs. econometrics
 
-* **Machine Learning** is all about maximizing and out-of-sample prediction
-* **Econometrics** is all about finding "consistent" parameter estimates (e.g. making sure that the estimated parameters of the model will converge to their "true" values given a large enough sample size)
+* **Machine Learning** is all about maximizing out-of-sample prediction
+* **Econometrics** is all about finding "unbiased" and "consistent" parameter estimates (e.g. making sure that the estimated parameters of the model will converge to their "true" population values given a large enough sample size)
 * **Machine Learning** is all about finding y&#770;
 * **Econometrics** is all about finding &beta;&#770;
 
@@ -64,7 +64,7 @@ The algorithm typically comes with **tuning parameters** which are ways to regul
     * And a model that will predict well out-of-sample
 
 ### One option: a separate dummy variable for every house
-* In this scneario, you run `lm(log(price) ~ as.factor(houseID))`
+* In this scenario, you run `lm(log(price) ~ as.factor(houseID))`
 * What you get is a separate price prediction for every single house
 * But what to do when given a new house that's not in the sample?
     * Which house in the sample is the one you should use for prediction?
@@ -73,9 +73,9 @@ The algorithm typically comes with **tuning parameters** which are ways to regul
 * We say that this prediciton has **high variance** (i.e. the algorithm thinks random noise is something that is important to the model)
 
 ### Another option: house price is a linear function of square footage
-* In this scenario, you simple run `lm(log(price) ~ sqft)`
-* When given a new hosue with a given square footage, you will only look at the square footage to predict the price of the new house
-* This algorithm will result in **underfitting** because the functional form and features it uses for prediction is too simplistic
+* In this scenario, you simply run `lm(log(price) ~ sqft)`
+* When given a new house with a given square footage, you will only look at the square footage to predict the price of the new house
+* This algorithm will result in **underfitting** because the functional form and features it uses for prediction are too simplistic
 * We say that this prediction has **high bias** (i.e. the algorithm does not think enough variation is important to the model)
 
 ## Bias-variance tradeoff
@@ -108,7 +108,7 @@ The following graphic from p. 194 of Hastie, Tsibshirani, and Friedman's *Elemen
     * Naturally geared towards not overfitting, but can be regularized with iterative variable selection algorithms (similar to stepwise/stagewise regression)
 
 ## Visualization of different predictors
-The following graphic shows a visualization of different classification algorithms, accross two features (call them X and Y). Note the stark differences in the prediction regions.
+The following graphic shows a visualization of different classification algorithms, across two features (call them X and Y). Note the stark differences in the prediction regions.
 
 ![Source: Sebastian Raschka on twitter](../Graphics/DYTAagSVAAACVc7.jpg "Comparison of different machine learning classification algorithms")
 
