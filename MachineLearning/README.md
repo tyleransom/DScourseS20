@@ -507,23 +507,23 @@ We won't go into the details of this approach, since it is not immediately appli
 If you're curious about these types of algorithms, you can check out a nice primer [here](https://cran.r-project.org/web/packages/GA/vignettes/GA.html).
 
 ## Naive Bayes
-Bayes' Rule is the idea that one should update one's degree of belief in a given hypothesis once she receives new evidence. If the evidence is consistent with the hypothesis, the probability of belief goes up. If not, the probability goes down. Example from *The Master Algorithm* (p. 144): "If you test positive for AIDS, your probability of having it goes up."
+Bayes' Rule is the idea that one should update one's degree of belief in a given hypothesis once she receives new evidence. If the evidence is consistent with the hypothesis, the probability of belief goes up. If not, the probability goes down. Example adapted from *The Master Algorithm* (p. 144): "If you test positive for COVID-19, your probability of having it goes up."
 
 The "updated" probability is called the **posterior probability** while the original probability is called the **prior probability**.
 
 Mathematically, Bayes' Rule states that, for any two events A and B: P(A | B) = P(A) \* P(B | A) / P(B).
 
-Maybe a better way to put it is: P(hypothesis | data) = P(hypothesis) \* P(data | hypothesis) / P(data).
+Maybe a better way to put it is: P(hypothesis | evidence) = P(hypothesis) \* P(evidence | hypothesis) / P(evidence).
 
-So what does that mean? Let's think about it with the AIDS example. We want to know the likelihood of our having AIDS given that the test returned a positive result. Let's replace "A" with "HIV" and "B" with "positive" in the above formula:
+So what does that mean? Let's think about it with the COVID-19 example. We want to know the likelihood of our having COVID-19 given that the test returned a positive result. Let's replace "A" with "COVID19" and "B" with "positive" in the above formula:
 
-P(HIV | positive) = P(HIV) \* P(positive | HIV) / P(positive)
+P(COVID19 | positive) = P(COVID19) \* P(positive | COVID19) / P(positive)
 
-suppose P(HIV) = 0.003 in the population, that P(positive) [regardless of whether or not you actuall have HIV] is 0.01, and that, if you actually have HIV, the test would be positive with probability 0.99. Plugging this into the above formula, we get
+suppose P(COVID19) = 0.003 in the population, that P(positive) [regardless of whether or not you actuallY have COVID-19] is 0.01, and that, if you actually have COVID-19, the test would be positive with probability 0.99. Plugging this into the above formula, we get
 
-P(HIV | positive) = 0.003 \* 0.99 / 0.01 = 0.297
+P(COVID19 | positive) = 0.003 \* 0.99 / 0.01 = 0.297
 
-Before getting the test, we believed we had HIV with probability 0.003 (the population rate of HIV). After getting the positive test, we update our prior to be 0.297. Why not all the way up to 0.99? Because the test could yield false positives, so we don't want to be too hasty in our belief updating.
+Before getting the test, we believed we had COVID-19 with probability 0.003 (the population rate of COVID-19). After getting the positive test, we update our prior to be 0.297. Why not all the way up to 0.99? Because the test could yield false positives, so we don't want to be too hasty in our belief updating.
 
 If P(positive) were equal to 0.003, then we'd be really worried because that would mean that the false positive rate of the test was much lower. If that were the case, our posterior probability would skyrocket to 0.99 from 0.297. 
 
@@ -614,7 +614,7 @@ The regularization parameters that needs to be cross-validated in SVM models are
 | Symbolists     | Tree models             | `rpart`   | `minsplit` (integer), `minbucket` (integer), `cp` (numeric, typically very small) | `classif.rpart` |
 | Connectionists | Neural networks         | `nnet`    | `size` (number of neurons in hidden layer; integer), `decay` (lambda; numeric) | `classif.nnet` |
 | Evolutionaries | Genetic algorithms      | `GA`      | N/A | N/A |
-| Bayesians      | Naive Bayes             | `e1071`   | N/A | N/A |
+| Bayesians      | Naive Bayes             | `e1071`   | N/A | `classif.naiveBayes` |
 | Analogizers    | Nearest neighbor        | `kknn`    | `k` (integer) | `classif.kknn` |
 |                | Support Vector Machine  | `e1071`   | `cost` (numeric ranging from 2^-10 to 2^10); `gamma` (same as `cost`) | `classif.svm` |
 
