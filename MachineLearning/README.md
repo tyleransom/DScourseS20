@@ -440,6 +440,11 @@ Since decision trees are nonparametric, we can't use L1 or L2 regularization. In
 3. Minimal leaf size
 4. Information gain at splits (i.e. how "greedy" the algorithm is)
 
+
+### Visualizing Decision Trees (Example from Titanic Mortality Data)
+![Source: Grant McDermott, "parttree" R package ([here](https://github.com/grantmcdermott/parttree/blob/master/man/figures/README-titanic_plot-1.png))](../Graphics/README-titanic_plot-1.png "Titanic Survival Rates")
+
+
 ## Neural networks
 Neural networks model the brain. They work by forming "connections" across "neurons" which work together to decide whether to "fire." A given neuron only fires if it has enough "activation energy." Why is this the case? Because that's how the human brain works, and the human brain is the triumph of biology.
 
