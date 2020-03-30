@@ -442,7 +442,9 @@ Since decision trees are nonparametric, we can't use L1 or L2 regularization. In
 
 
 ### Visualizing Decision Trees (Example from Titanic Mortality Data)
-![Source: Grant McDermott, "parttree" R package ([here](https://github.com/grantmcdermott/parttree/blob/master/man/figures/README-titanic_plot-1.png))](../Graphics/README-titanic_plot-1.png "Titanic Survival Rates")
+![Source: Grant McDermott, "parttree" R package](../Graphics/README-titanic_plot-1.png "Titanic Survival Rates")
+
+Source: Grant McDermott's "parttree" R package ([here](https://github.com/grantmcdermott/parttree/blob/master/man/figures/README-titanic_plot-1.png))
 
 
 ## Neural networks
