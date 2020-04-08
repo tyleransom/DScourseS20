@@ -1,6 +1,6 @@
 set.seed(100)
 
-income <- read.table("https://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data")
+income <- read.table("http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.data")
 names(income) <- c("age","workclass","fnlwgt","education","education.num","marital.status","occupation","relationship","race","sex","capital.gain","capital.loss","hours","native.country","high.earner")
 
 # From UC Irvine's website (http://archive.ics.uci.edu/ml/machine-learning-databases/adult/adult.names)
