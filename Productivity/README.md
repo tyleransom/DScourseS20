@@ -98,7 +98,7 @@ Many times when performing intensive computational tasks, you will exceed the co
 The way to interface with the remote server (via the Linux command line) is via Secure Shell (commonly called SSH). You download an SSH client to your computer, provide it the IP address and login credentials for your account on the HPC cluster, and then you can log in via an internet connection. (In some cases, you may need to log in via a Virtual Private Network (VPN) for security reasons.) The following are SSH clients for different OSes.
 
 * Windows: I recommend using [PuTTY](http://www.putty.org/)
-* Mac OS: SSH is built in via the Terminal (This is because Mac OS is built on Linux)
+* Mac OS: SSH is built in via the Terminal (This is because Mac OS is built on Unix)
 * Linux: SSH is built in via the Terminal
 
 ### 4.2 SFTP
